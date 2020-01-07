@@ -1,71 +1,136 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const Form = props => {
+const SignUpForm = props => {
   const [member, setMember] = useState({
-    name: "",
-    email: "",
-    age: ""
+    firstName: "",
+    lastName: "",
+    villageName: "",
+    loanAmount: "",
+    currentAmount: "",
+    loanInitiation: "",
+    loanDue: "",
+    bagsOfMaize: "",
+    goal: ""
   });
 
+  useEffect(() => {
+    setMember({
+      name: member.firstName,
+      name: member.lastName
+    });
+  }, []);
   // this makes your searchbar let you type
-  const handleChanges = event => {
-    // event.preventDefault();
-    // props.addNewMember(member);
-    // setMember({ ...member, [event.target.name]: event.target.value })
+  const handleChanges = e => {
     setMember({
       ...member,
-      [event.target.name]: event.target.value
+      [e.target.name]: e.target.value
     });
   };
 
-  const submitForm = event => {
+  const submitForm = e => {
     // console.log (member) to have form show up in console
     // console.log(member);
-    event.preventDefault();
+    e.preventDefault();
     props.memberUpdate(member);
     // setMember({ name: "", email: "", role: "" });
   };
 
+  console.log(member);
+
   return (
     <form onSubmit={submitForm}>
-      <label html="name">Name</label>
+      <label html="title">First Name</label>
+      {member.name}
+      <input
+        onChange={e => handleChanges(e)}
+        id="title"
+        name="firstName"
+        type="text"
+        placeholder="title"
+        value={member.firstName}
+      />
+      <label html="name">Last Name</label>
       <input
         onChange={handleChanges}
         id="title"
-        name="name"
+        name="lastName"
         type="text"
         placeholder="title"
-        value={member.name}
+        value={member.lastName}
       />
       <div>
-        <label html="email">Email</label>
+        <label html="name">Village Name</label>
         <input
           onChange={handleChanges}
           id="title"
-          name="email"
+          name="villageName"
           type="text"
           placeholder="title"
-          value={member.email}
+          value={member.villageName}
         />
       </div>
 
-      <label html="role">Age</label>
+      <label html="number">Loan Amount</label>
       <input
         onChange={handleChanges}
         id="title"
-        name="role"
-        type="text"
+        name="loanAmount"
+        type="number"
         placeholder="title"
-        value={member.age}
+        value={member.loanAmount}
+      />
+      <label html="number">Current Amount</label>
+      <input
+        onChange={handleChanges}
+        id="title"
+        name="currentAmount"
+        type="number"
+        placeholder="title"
+        value={member.currentAmount}
+      />
+
+      {/* date  */}
+      <label html="role">Loan Initiation Date</label>
+      <input
+        onChange={handleChanges}
+        id="title"
+        name="loanInitiationDate"
+        type="date"
+        placeholder="title"
+        value={member.loanInitiation}
+      />
+      <label html="role">Loan Due Date</label>
+      <input
+        onChange={handleChanges}
+        id="title"
+        name="loanDue"
+        type="date"
+        placeholder="title"
+        value={member.loanDue}
+      />
+      <label html="role">Bags of Maize</label>
+      <input
+        onChange={handleChanges}
+        id="title"
+        name="bagsOfMaize"
+        type="number"
+        placeholder="title"
+        value={member.bagsOfMaize}
+      />
+
+      <label html="role">Goal</label>
+      <input
+        onChange={handleChanges}
+        id="title"
+        name="goal"
+        type="number"
+        placeholder="title"
+        value={member.goal}
       />
 
       {/* Start radio Buttons */}
-      {/* <div>
-        <input type="radio" id="title" name="done" value="done" />
-        <label for="button">Done</label>
-      </div> */}
 
-      <div>
+      {/* <div>
         <h3>
           <label html="Gender">Gender</label>
         </h3>
@@ -78,7 +143,7 @@ const Form = props => {
       <div>
         <input type="radio" id="title" name="name" value="ignored" />
         <label for="button">Male</label>
-      </div>
+      </div> */}
 
       <div>
         <button type="submit">Submit</button>
@@ -89,4 +154,4 @@ const Form = props => {
 
 // ending form
 
-export default Form;
+export default SignUpForm;

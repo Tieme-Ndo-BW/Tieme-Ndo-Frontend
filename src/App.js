@@ -12,16 +12,26 @@ import SignUp from "./components/SignUp";
 // object pair needs {role}
 function App() {
   const [members, setMember] = useState([
-    { id: 1, name: "skye sajous", email: "skyesajous@gmail.com", role: "owner" }
+    {
+      // id: 1,
+      // firstName: "skye ",
+      // lastName: "sajous"
+    }
   ]);
 
   // MemberUpdate?
   const memberUpdate = card => {
     const member = {
       id: Date.now(),
-      name: card.name,
-      email: card.email,
-      age: card.age
+      firstName: card.firstName,
+      lastName: card.lastName,
+      villageName: card.villageName,
+      loanAmount: card.loanAmount,
+      currentAmount: card.currentAmount,
+      loanInitiation: card.loanInitiation,
+      loanDue: card.loanDue,
+      bageOfMaize: card.bagsOfMaize,
+      goal: card.goal
     };
     setMember([...members, member]);
   };
