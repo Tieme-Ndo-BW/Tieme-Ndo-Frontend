@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from './axiosWithAuth';
 
-// import Bubbles from "./Bubbles";
-// import ColorList from "./ColorList";
-
 const ClientPage = () => {
   const [clientList, setClientList] = useState([]);
   

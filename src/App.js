@@ -15,7 +15,7 @@ function App() {
         <Route exact path= '/' component={Login} />
         <Switch>
           <PrivateRoute exact path= '/clients' component= {ClientPage} />
-          <Route exact path ='/login' component= {Login} />
+          <Route exact path ='/auth' component= {Login} />
         </Switch>
       </div>
     </Router>

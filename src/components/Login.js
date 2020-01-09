@@ -14,7 +14,7 @@ const Login = props => {
         event.preventDefault();
 
         axiosWithAuth()
-            .post('api/clients')
+            .post('api/auth/login', login)
             .then(response => {
                 localStorage.setItem('token', response.data.payload);
                 props.history.push('/clients')
@@ -24,8 +24,8 @@ const Login = props => {
 
     return (
 
-        <div className= 'Client-Login'>
-            <h1> Clients </h1>
+        <div className= 'Login'>
+            <h1> Login Page </h1>
         
             <form onSubmit = {handleSubmit}>
                 <input 
