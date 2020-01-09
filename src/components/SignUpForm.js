@@ -8,14 +8,36 @@ const Page = styled.div`
   height: 100vh;
   background-image: url(${img});
   opacity: 0.9;
+  position:relative
+  align-items: center;
+  // background-color: blue;
 `;
 const H2 = styled.h2`
   opacity: 1;
   background-color: blue;
 `;
 
-const Label = styled.label`
+const Form = styled.form`
   opacity: 1;
+  background-color: blue;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
+const Labels = styled.div`
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 80%;
 `;
 
 const SignUpForm = props => {
@@ -83,27 +105,32 @@ const SignUpForm = props => {
       <H2>Tieme Ndo Credit Extension Package (CEP)Agreement Form</H2>{" "}
       <div className="page">
         {/* <img src={img} alt="img" /> */}
-        <form onSubmit={submitForm}>
-          <label html="title">First Name</label>
-          {member.name}
-          <input
-            onChange={e => handleChanges(e)}
-            id="title"
-            name="FirstName"
-            type="text"
-            placeholder="title"
-            value={member.FirstName}
-          />
-          <label html="name">Last Name</label>
-          <input
-            onChange={handleChanges}
-            id="title"
-            name="LastName"
-            type="text"
-            placeholder="title"
-            value={member.LastName}
-          />
-          <div>
+        <Form onSubmit={submitForm}>
+          <Labels>
+            <label html="title">First Name</label>
+            {member.name}
+            <input
+              onChange={e => handleChanges(e)}
+              id="title"
+              name="FirstName"
+              type="text"
+              placeholder="title"
+              value={member.FirstName}
+            />
+          </Labels>
+          <Labels>
+            <label html="name">Last Name</label>
+
+            <input
+              onChange={handleChanges}
+              id="title"
+              name="LastName"
+              type="text"
+              placeholder="title"
+              value={member.LastName}
+            />
+          </Labels>
+          <Labels>
             <label html="name">Village Name</label>
             <input
               onChange={handleChanges}
@@ -113,110 +140,84 @@ const SignUpForm = props => {
               placeholder="title"
               value={member.VillageName}
             />
-          </div>
-
-          <label html="number">Loan Amount</label>
-          <input
-            onChange={handleChanges}
-            id="title"
-            name="LoanAmount"
-            type="number"
-            placeholder="title"
-            value={member.LoanAmount}
-          />
-          <label html="number">Current Amount</label>
-          <input
-            onChange={handleChanges}
-            id="title"
-            name="CurrentAmount"
-            type="number"
-            placeholder="title"
-            value={member.CurrentAmount}
-          />
-
-          {/* date  */}
-          <label html="date">Loan Initiation Date</label>
-          <input
-            onChange={handleChanges}
-            id="title"
-            name="LoanInitiation"
-            type="date"
-            placeholder="title"
-            value={member.LoanInitiation}
-          />
-          <label html="date">Loan Due Date</label>
-          <input
-            onChange={handleChanges}
-            id="title"
-            name="DueDate"
-            type="date"
-            placeholder="title"
-            value={member.DueDate}
-          />
-          <label html="number">Bags of Maize</label>
-          <input
-            onChange={handleChanges}
-            id="title"
-            name="BagsOfMaize"
-            type="number"
-            placeholder="title"
-            value={member.BagsOfMaize}
-          />
-
-          <label html="number">Goal</label>
-          <input
-            onChange={handleChanges}
-            id="title"
-            name="Goal"
-            type="number"
-            placeholder="title"
-            value={member.Goal}
-          />
-
-          {/* Start radio Buttons */}
-
-          {/* <div>
-        <h3>
-          <label html="Gender">Gender</label>
-        </h3>
-      </div>
-      <div>
-        <input type="radio" id="title" name="name" value="scheduled" />
-        <label for="button">Female</label>
-      </div>
-
-      <div>
-        <input type="radio" id="title" name="name" value="ignored" />
-        <label for="button">Male</label>
-      </div> */}
+          </Labels>
+          <Labels>
+            <label html="number">Loan Amount</label>
+            <input
+              onChange={handleChanges}
+              id="title"
+              name="LoanAmount"
+              type="number"
+              placeholder="title"
+              value={member.LoanAmount}
+            />
+          </Labels>
+          <Labels>
+            <label html="number">Current Amount</label>
+            <input
+              onChange={handleChanges}
+              id="title"
+              name="CurrentAmount"
+              type="number"
+              placeholder="title"
+              value={member.CurrentAmount}
+            />
+          </Labels>
+          <Labels>
+            {/* date  */}
+            <label html="date">Loan Initiation Date</label>
+            <input
+              onChange={handleChanges}
+              id="title"
+              name="LoanInitiation"
+              type="date"
+              placeholder="title"
+              value={member.LoanInitiation}
+            />
+          </Labels>
+          <Labels>
+            <label html="date">Loan Due Date</label>
+            <input
+              onChange={handleChanges}
+              id="title"
+              name="DueDate"
+              type="date"
+              placeholder="title"
+              value={member.DueDate}
+            />
+          </Labels>
+          <Labels>
+            <label html="number">Bags of Maize</label>
+            <input
+              onChange={handleChanges}
+              id="title"
+              name="BagsOfMaize"
+              type="number"
+              placeholder="title"
+              value={member.BagsOfMaize}
+            />
+          </Labels>
+          <Labels>
+            <label html="number">Goal</label>
+            <input
+              onChange={handleChanges}
+              id="title"
+              name="Goal"
+              type="number"
+              placeholder="title"
+              value={member.Goal}
+            />
+          </Labels>
 
           <div>
             <button type="submit">Make Member</button>
-
-            {/* <button
-              type="button"
-              onClick={() =>
-                props.member(
-                  props.FirstName,
-                  props.LastName,
-                  props.VillageName,
-                  props.LoanAmount,
-                  props.CurrentAmount,
-                  props.LoanInitiation,
-                  props.LoanDue,
-                  props.BagsOfMaize,
-                  props.Goal
-                )
-              }
-            >
-              Make a Member!
-            </button> */}
           </div>
-        </form>
-        <Link to={"/login"}>Already A Member?</Link>
-        {/* <Link to={"/signupform"}>New Here?</Link> */}
-        {/* <button>Already A Member?</button> */}
-        {/* <Route /> */}
+
+          <Link to={"/login"}>Already A Member?</Link>
+          {/* <Link to={"/signupform"}>New Here?</Link> */}
+          {/* <button>Already A Member?</button> */}
+          {/* <Route /> */}
+        </Form>
       </div>
     </Page>
   );
