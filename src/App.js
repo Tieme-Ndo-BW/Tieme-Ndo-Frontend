@@ -1,9 +1,9 @@
 // import useState
 
 import React, { useState } from "react";
-
+import login from "./components/login";
 import "./App.css";
-
+import { Route, Link } from "react-router-dom";
 import SignUpForm from "./components/SignUpForm";
 import SignUp from "./components/SignUp";
 
@@ -29,7 +29,7 @@ function App() {
       loanAmount: card.LoanAmount,
       currentAmount: card.CurrentAmount,
       loanInitiation: card.LoanInitiation,
-      loanDue: card.LoanDue,
+      loanDue: card.DueDate,
       bageOfMaize: card.BagsOfMaize,
       goal: card.Goal
     };
@@ -38,8 +38,13 @@ function App() {
 
   return (
     <div className="App">
-      <SignUpForm memberUpdate={memberUpdate} />
-      <SignUp members={members} />
+      {/* <SignUpForm memberUpdate={memberUpdate} /> */}
+      {/* <SignUp members={members} /> */}
+      {/* <Link to={"/login"}>Already A Member?</Link> */}
+      {/* <Link to={"/signupform"}>New Here?</Link> */}
+      {/* <Route path="/" component={login} /> */}
+      <Route exact path={`/signupform`} component={SignUpForm} />
+      <Route exact path="/login" component={login} />
     </div>
   );
 }

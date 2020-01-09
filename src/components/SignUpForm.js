@@ -11,6 +11,11 @@ const Page = styled.div`
 `;
 const H2 = styled.h2`
   opacity: 1;
+  background-color: blue;
+`;
+
+const Label = styled.label`
+  opacity: 1;
 `;
 
 const SignUpForm = props => {
@@ -21,7 +26,7 @@ const SignUpForm = props => {
     LoanAmount: 0,
     CurrentAmount: 0,
     LoanInitiation: "",
-    LoanDue: "",
+    DueDate: "",
     BagsOfMaize: 0,
     Goal: 0
   });
@@ -29,9 +34,9 @@ const SignUpForm = props => {
   useEffect(() => {
     axios
       .get(`https://lambda-tmb.herokuapp.com/api/clients`)
-      .then(response =>
-        // console.log("response", response.data)
-        setMember(response.data)
+      .then(
+        response => console.log("response", response.data)
+        // setMember(response.data)
       )
       .catch(error => console.log("error", error));
   }, []);
@@ -134,7 +139,7 @@ const SignUpForm = props => {
           <input
             onChange={handleChanges}
             id="title"
-            name="LoanInitiationDate"
+            name="LoanInitiation"
             type="date"
             placeholder="title"
             value={member.LoanInitiation}
@@ -143,10 +148,10 @@ const SignUpForm = props => {
           <input
             onChange={handleChanges}
             id="title"
-            name="LoanDue"
+            name="DueDate"
             type="date"
             placeholder="title"
-            value={member.LoanDue}
+            value={member.DueDate}
           />
           <label html="number">Bags of Maize</label>
           <input
@@ -208,8 +213,10 @@ const SignUpForm = props => {
             </button> */}
           </div>
         </form>
-        <Link />
-        <Route />
+        <Link to={"/login"}>Already A Member?</Link>
+        {/* <Link to={"/signupform"}>New Here?</Link> */}
+        {/* <button>Already A Member?</button> */}
+        {/* <Route /> */}
       </div>
     </Page>
   );
