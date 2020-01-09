@@ -9,7 +9,7 @@ const ClientPage = () => {
   
   useEffect(() => {
     axiosWithAuth()
-      .get('http://xkcd.com/info.0.json')
+      .get('https://lambda-tmb.herokuapp.com/api/clients')
       .then(response => setClientList(response.data))
       .catch(error => console.log(error.response, 'no client, client page'))
   })
