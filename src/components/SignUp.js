@@ -6,15 +6,15 @@ const SignUp = props => {
     <div>
       {props.members.map(data => (
         <div key={data.id}>
-          <h1>{data.firstName}</h1>
-          <h1>{data.lastName}</h1>
-          <p>{data.villageName}</p>
-          <p>{data.loanAmount}</p>
-          <p>{data.currentAmount}</p>
-          <p>{data.loanInitiation}</p>
-          <p>{data.loanDue}</p>
-          <p>{data.bagsOfMaize}</p>
-          <p>{data.goal}</p>
+          <h1>{data.FirstName}</h1>
+          <h1>{data.LastName}</h1>
+          <p>{data.VillageName}</p>
+          <p>{data.LoanAmount}</p>
+          <p>{data.CurrentAmount}</p>
+          <p>{data.LoanInitiation}</p>
+          <p>{data.LoanDue}</p>
+          <p>{data.BagsOfMaize}</p>
+          <p>{data.Goal}</p>
         </div>
       ))}
     </div>

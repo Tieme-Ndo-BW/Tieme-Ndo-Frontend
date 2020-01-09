@@ -8,8 +8,8 @@ import SignUpForm from "./components/SignUpForm";
 import SignUp from "./components/SignUp";
 
 // useState needs empty array
-// list of Teammembers("") array of objects
-// object pair needs {role}
+// list of members("") array of objects
+
 function App() {
   const [members, setMember] = useState([
     {
@@ -23,22 +23,21 @@ function App() {
   const memberUpdate = card => {
     const member = {
       id: Date.now(),
-      firstName: card.firstName,
-      lastName: card.lastName,
-      villageName: card.villageName,
-      loanAmount: card.loanAmount,
-      currentAmount: card.currentAmount,
-      loanInitiation: card.loanInitiation,
-      loanDue: card.loanDue,
-      bageOfMaize: card.bagsOfMaize,
-      goal: card.goal
+      firstName: card.FirstName,
+      lastName: card.LastName,
+      villageName: card.VillageName,
+      loanAmount: card.LoanAmount,
+      currentAmount: card.CurrentAmount,
+      loanInitiation: card.LoanInitiation,
+      loanDue: card.LoanDue,
+      bageOfMaize: card.BagsOfMaize,
+      goal: card.Goal
     };
     setMember([...members, member]);
   };
 
   return (
     <div className="App">
-      <h2>Tieme Ndo Credit Extension Package (CEP)Agreement Form</h2>{" "}
       <SignUpForm memberUpdate={memberUpdate} />
       <SignUp members={members} />
     </div>
