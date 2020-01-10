@@ -11,15 +11,19 @@ const Page = styled.div`
   position:relative
   align-items: center;
   // background-color: blue;
+  
 `;
 const H2 = styled.h2`
   opacity: 1;
-  background-color: blue;
+  background-color: #0066cc;
+  border-radius: 12px;
+  border: 3px solid #e3e3e3;
 `;
 
 const Form = styled.form`
   opacity: 1;
-  background-color: blue;
+  background-color: #0066cc;
+
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -30,6 +34,14 @@ const Form = styled.form`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 15px;
+  border: 3px solid #e3e3e3;
+`;
+
+const Links = styled.h3`
+  color: white;
+  text-decoration: none;
+  // font-size: 16px;
 `;
 
 const Labels = styled.div`
@@ -38,6 +50,26 @@ const Labels = styled.div`
   justify-content: space-between;
   flex-direction: column;
   width: 80%;
+  font-family: Arial;
+  font-size: 18px;
+`;
+
+const Button = styled.button`
+  // width: 123%;
+  // padding: 17px;
+  box-shadow: -11px -13px 12px -14px #e6e6e6;
+  background: linear-gradient(to bottom, #c0caf0 5%, #3820e6 100%);
+  background-color: #c0caf0;
+  border-radius: 15px;
+  border: 3px solid #e3e3e3;
+  display: inline-block;
+  cursor: pointer;
+  color: #1a101a;
+  font-family: Arial;
+  font-size: 16px;
+  padding: 14px 76px;
+  text-decoration: none;
+  margin-top: 25px;
 `;
 
 const SignUpForm = props => {
@@ -108,6 +140,7 @@ const SignUpForm = props => {
         <Form onSubmit={submitForm}>
           <Labels>
             <label html="title">First Name</label>
+
             {member.name}
             <input
               onChange={e => handleChanges(e)}
@@ -210,10 +243,13 @@ const SignUpForm = props => {
           </Labels>
 
           <div>
-            <button type="submit">Make Member</button>
+            <Button type="submit">Make Member</Button>
           </div>
-
-          <Link to={"/login"}>Already A Member?</Link>
+          <Links>
+            <Link to={"/login"}>
+              <h3>Already A Member?</h3>
+            </Link>
+          </Links>
           {/* <Link to={"/signupform"}>New Here?</Link> */}
           {/* <button>Already A Member?</button> */}
           {/* <Route /> */}
