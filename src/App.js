@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import PrivateRoute from './components/PrivateRoute';
 import Login from './components/Login';
+import Register from './components/Register';
 import ClientPage from './components/ClientPage';
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
         <Route exact path= '/' component={Login} />
         <Switch>
           <PrivateRoute exact path= '/clients' component= {ClientPage} />
-          <Route exact path ='/auth' component= {Login} />
+          <Route exact path ='/login' component= {Login} />
+          <Route exact path ='/register' component= {Register} />
         </Switch>
       </div>
     </Router>

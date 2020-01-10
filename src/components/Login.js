@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { axiosWithAuth } from './axiosWithAuth';
 
 const Login = props => {
@@ -36,7 +37,7 @@ const Login = props => {
                     onChange= {handleLogin}
                     value= {login.username}
                 />
-
+                <br></br>
                 <input 
                     type= 'password'
                     name= 'password'
@@ -45,8 +46,10 @@ const Login = props => {
                     onChange= {handleLogin}
                     value= {login.password}
                 />
-
+                <br></br>
                 <button type='submit'>Login</button>
+                <br></br>
+                <Link to={'/register'}>Register</Link>
             </form>
         </div>
     );
