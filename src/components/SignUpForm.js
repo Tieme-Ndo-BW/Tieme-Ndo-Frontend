@@ -18,12 +18,13 @@ const H2 = styled.h2`
   background-color: #0066cc;
   border-radius: 12px;
   border: 3px solid #e3e3e3;
+  font-family: "Macondo Swash Caps", serif;
 `;
 
 const Form = styled.form`
   opacity: 1;
   background-color: #0066cc;
-
+  // font-family: "Macondo Swash Caps", serif;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -50,13 +51,19 @@ const Labels = styled.div`
   justify-content: space-between;
   flex-direction: column;
   width: 80%;
-  font-family: Arial;
+  // font-family: Arial;
+  font-family: "Macondo Swash Caps", serif;
   font-size: 18px;
+  // border: 0.6px solid #e3e3e3;
+  border-radius: 5px;
+  box-shadow: -11px -13px 12px -14px #e6e6e6;
+  padding: 6px;
 `;
 
 const Button = styled.button`
   // width: 123%;
   // padding: 17px;
+  display: flex;
   box-shadow: -11px -13px 12px -14px #e6e6e6;
   background: linear-gradient(to bottom, #c0caf0 5%, #3820e6 100%);
   background-color: #c0caf0;
